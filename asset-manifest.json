@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/steps-counter/static/css/main.2cce8147.chunk.css",
-    "main.js": "/steps-counter/static/js/main.1f922a52.chunk.js",
-    "main.js.map": "/steps-counter/static/js/main.1f922a52.chunk.js.map",
+    "main.js": "/steps-counter/static/js/main.b37c63f9.chunk.js",
+    "main.js.map": "/steps-counter/static/js/main.b37c63f9.chunk.js.map",
     "runtime~main.js": "/steps-counter/static/js/runtime~main.3acd64e2.js",
     "runtime~main.js.map": "/steps-counter/static/js/runtime~main.3acd64e2.js.map",
     "static/js/2.7941e36a.chunk.js": "/steps-counter/static/js/2.7941e36a.chunk.js",
     "static/js/2.7941e36a.chunk.js.map": "/steps-counter/static/js/2.7941e36a.chunk.js.map",
     "index.html": "/steps-counter/index.html",
-    "precache-manifest.b3df0075d92095cf875e9ac925795b2a.js": "/steps-counter/precache-manifest.b3df0075d92095cf875e9ac925795b2a.js",
+    "precache-manifest.c11430f0887fc75910e7e65fddc729ac.js": "/steps-counter/precache-manifest.c11430f0887fc75910e7e65fddc729ac.js",
     "service-worker.js": "/steps-counter/service-worker.js",
     "static/css/main.2cce8147.chunk.css.map": "/steps-counter/static/css/main.2cce8147.chunk.css.map"
   }
