@@ -16,7 +16,7 @@ export function TotalSteps(props) {
     <div>
       <h1>
         {totalSteps === 0
-          ? "No only step at all"
+          ? "No one step at all"
           : `${totalSteps} steps at all!`}
       </h1>
     </div>

@@ -15,7 +15,7 @@ export function CounterClock(props) {
 
   return (
     <div>
-      <h1>{counter === 0 ? "No only step" : `${counter} steps!`}</h1>
+      <h1>{counter === 0 ? "No one step" : `${counter} steps!`}</h1>
       <div>
         <ActionButton steps={counter} />
       </div>

@@ -7,13 +7,16 @@ export function StopTime(props) {
   const [stopTime, setStopTime] = useState(originalStopTime);
 
   useEffect(() => {
-    let sub = isStopedSubject.subscribe(i => {
+    let subIsStoppedSubject = isStopedSubject.subscribe(i => {
       stopTimeObs.subscribe(stopTimeEv => setStopTime(stopTimeEv));
     });
 
-    isWalkingSubject.subscribe(i => setStopTime(originalStopTime));
+    let subIsWalkingSubject = isWalkingSubject.subscribe(i => setStopTime(originalStopTime));
 
-    return () => sub.unsubscribe();
+    return () => {
+        subIsStoppedSubject.unsubscribe();
+        subIsWalkingSubject.unsubscribe();
+    }
   });
 
   return (
