@@ -1,31 +1,23 @@
-import React, { useState } from "react";
-import {
-  counterObs,
-  totalStepsSubject,
-  isStoped,
-  isWalking
-} from "../streams.js";
+import React, { useState, useEffect } from "react";
+import { counterObs, isWalkingSubject } from "../streams.js";
+import { ActionButton } from "./ActionButton";
 
 export function CounterClock(props) {
   const [counter, setCounter] = useState(0);
+  const [isSub, setIsSub] = useState(false);
 
-  isWalking.subscribe(i => {
-    counterObs.subscribe(step => setCounter(step));
-  });
+  useEffect(() => {
+    isWalkingSubject.subscribe(i => {
+      setIsSub(true);
+      counterObs.subscribe(step => setCounter(step));
+    });
+  }, [isSub]);
 
   return (
     <div>
       <h1>{counter === 0 ? "No only step" : `${counter} steps!`}</h1>
       <div>
-        <button onClick={() => isWalking.next(true)}>Play!</button>
-        <button
-          onClick={() => {
-            isStoped.next(true);
-            totalStepsSubject.next(counter);
-          }}
-        >
-          Pause!
-        </button>
+        <ActionButton steps={counter} />
       </div>
     </div>
   );
