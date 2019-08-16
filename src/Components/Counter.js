@@ -4,14 +4,14 @@ import { ActionButton } from "./ActionButton";
 
 export function CounterClock(props) {
   const [counter, setCounter] = useState(0);
-  const [isSub, setIsSub] = useState(false);
 
   useEffect(() => {
-    isWalkingSubject.subscribe(i => {
-      setIsSub(true);
+    let sub = isWalkingSubject.subscribe(i => {
       counterObs.subscribe(step => setCounter(step));
     });
-  }, [isSub]);
+
+    return () => sub.unsubscribe()
+  });
 
   return (
     <div>

@@ -1,15 +1,20 @@
-import React, { useState } from "react";
-import { stopTimeObs, isStoped, isWalking } from "../streams.js";
+import React, { useState, useEffect } from "react";
+
+import { stopTimeObs, isStopedSubject, isWalkingSubject } from "../streams.js";
 
 export function StopTime(props) {
   const originalStopTime = "0 m: 0 s";
   const [stopTime, setStopTime] = useState(originalStopTime);
 
-  isStoped.subscribe(i => {
-    stopTimeObs.subscribe(stopTimeEv => setStopTime(stopTimeEv));
-  });
+  useEffect(() => {
+    let sub = isStopedSubject.subscribe(i => {
+      stopTimeObs.subscribe(stopTimeEv => setStopTime(stopTimeEv));
+    });
 
-  isWalking.subscribe(i => setStopTime(originalStopTime));
+    isWalkingSubject.subscribe(i => setStopTime(originalStopTime));
+
+    return () => sub.unsubscribe();
+  });
 
   return (
     <div>
