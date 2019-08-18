@@ -21,7 +21,7 @@ export function StopTime(props) {
 
   return (
     <div>
-      <h1>Stoped time</h1>
+      <h1>Stopped time</h1>
       <h2>{stopTime}</h2>
     </div>
   );
